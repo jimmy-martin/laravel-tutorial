@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index']);
 
+Route::get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id');
+
+Route::get('/contact', [PostController::class, 'contact']);
+
 // Route::get('posts', function(){
 //     return response()->json([
 //         'title' => 'un titre',
