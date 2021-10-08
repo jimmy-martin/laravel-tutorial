@@ -11,8 +11,12 @@
 
 <body>
     @include('partials.navbar')
-    @yield('content')
+    <div class="container mx-auto">
+        @yield('content')
+    </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
+
+{{-- TODO: Prochaine vidéo à suivre: les migrations (vidéo n°6) --}}
