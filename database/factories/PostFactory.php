@@ -26,5 +26,13 @@ class PostFactory extends Factory
             'content' => $this->faker->paragraph,
             'created_at' => now()
         ];
+
+        // pour utiliser la fcatory, on doit :
+        // faire la commande " php artisan tinker " pour ouvrir la console laravel
+        // ensuite " Post::factory()->count(10)->create() "
+        // on indique d'abord le model pour lequel on souhaite utiliser la factory
+        // esnuite, le nombre de lignes que l'on souhaite créer
+        // puis la fonction create afin de créer les fausses données
+
     }
 }
