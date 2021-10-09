@@ -3,6 +3,6 @@
         <a href="{{ route('welcome') }}">Accueil</a>
     </li>
     <li>
-        <a href="{{ route('contact') }}">Contactez-nous</a>
+        <a href="{{ route('contact') }}">Contact</a>
     </li>
 </ul>
