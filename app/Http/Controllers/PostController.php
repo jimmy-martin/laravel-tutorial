@@ -2,28 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = [
-            'Mon super premier titre',
-            'Mon super deuxième titre'
-        ];
+        $posts = Post::all();
+        // dd($posts);
 
-        return view('articles', compact('posts'));
+        return view('articles', [
+            'posts' => $posts,
+        ]);
     }
 
     public function show($id)
     {
-        $posts = [
-            1 => 'Mon titre n°1',
-            2 => 'Mon titre n°2'
-        ];
-
-        $post = $posts[$id] ?? 'Pas de titre';
+        // la méthode findOrFail permet de renvoyer une 404
+        // si aucun article ne correspond à cet id
+        $post = Post::findOrFail($id);
 
         return view('article', [
             'post' => $post
