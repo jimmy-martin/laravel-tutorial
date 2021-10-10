@@ -5,9 +5,9 @@
 
     <hr>
     @forelse ($post->comments as $comment)
-        <div>{{ $comment->content }}</div>
+        <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }} </div>
     @empty
-        <div>Il n'y a pas de commentaires pour ce poste</div>
+        <div>Il n'y a pas de commentaires pour ce poste.</div>
     @endforelse
 
 @endsection
