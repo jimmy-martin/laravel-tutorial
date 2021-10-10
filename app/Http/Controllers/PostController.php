@@ -21,7 +21,15 @@ class PostController extends Controller
     {
         // la méthode findOrFail permet de renvoyer une 404
         // si aucun article ne correspond à cet id
-        $post = Post::findOrFail($id);
+        // $post = Post::findOrFail($id);
+
+        // on peut aussi récupérer un article grace à la valeur d'une des ses colonnes
+        // bien utiliser first() au lieu de get() car le where nous retourne un array
+        // En utilisant get(), il aurait fallu boucler sur lé resultat pour ne retourner que le premier index
+        // On peut préciser le '=', mais par defaut Laravel sait que l'on souhaite un '='
+        // donc il n'est pas obligatoire
+        $post = Post::where('title', '=', 'Quidem veritatis praesentium placeat aut iste.')->first();
+        // dd($post);
 
         return view('article', [
             'post' => $post
