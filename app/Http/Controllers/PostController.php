@@ -28,7 +28,7 @@ class PostController extends Controller
         // En utilisant get(), il aurait fallu boucler sur lé resultat pour ne retourner que le premier index
         // On peut préciser le '=', mais par defaut Laravel sait que l'on souhaite un '='
         // donc il n'est pas obligatoire
-        $post = Post::where('title', '=', 'Quidem veritatis praesentium placeat aut iste.')->first();
+        $post = Post::where('title', '=', 'Quidem veritatis praesentium placeat aut iste.')->firstOrFail();
         // dd($post);
 
         return view('article', [
