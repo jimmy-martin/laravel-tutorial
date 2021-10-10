@@ -4,8 +4,10 @@
     <h1>{{ $post->content }}</h1>
 
     <hr>
-    @foreach ($post->comments as $comment)
+    @forelse ($post->comments as $comment)
         <div>{{ $comment->content }}</div>
-    @endforeach
+    @empty
+        <div>Il n'y a pas de commentaires pour ce poste</div>
+    @endforelse
 
 @endsection
