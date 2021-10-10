@@ -9,7 +9,36 @@ class PostController extends Controller
 {
     public function index()
     {
+        // ======================
+        // Modification
+        // ======================
+
+        // Pour modifier un poste on peut procéder de cette façon
+        // $post = Post::find(1);
+
+        // $post->update([
+        //     'title' => 'Titre mis à jour'
+        // ]);
+
+        // ======================
+        // Suppression
+        // ======================
+
+        // Pour supprimer un poste
+        // $post = Post::findOrFail(12);
+        // $post->delete();
+
+
+        // ===============================
+        // Affichage de tous les postes
+        // ===============================
+
         $posts = Post::all();
+
+        // On peut utiliser Eloquent pour afficher les postes dans un certain ordre, ou en afficher qu'un certain nombre
+        // $posts = Post::orderBy('title')
+        //     ->take(3)
+        //     ->get();
         // dd($posts);
 
         return view('articles', [
