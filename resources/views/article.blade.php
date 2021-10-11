@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{ $post->content }}</h1>
+    <h1 class="text-2xl">{{ $post->content }}</h1>
 
     <span>
         {{ $post->image ? $post->image->path : 'Pas d\'image !' }}
@@ -9,7 +9,7 @@
 
     <hr>
     @forelse ($post->comments as $comment)
-        <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }} </div>
+        <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }}</div>
     @empty
         <div>Aucun commentaire pour ce poste.</div>
     @endforelse
