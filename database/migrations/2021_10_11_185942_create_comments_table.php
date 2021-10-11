@@ -15,15 +15,10 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('content');
+            $table->string('content');
+            $table->integer('commentable_id');
+            $table->string('commentable_type');
             $table->timestamps();
-
-            // On définit une clé étrangère comme cela (méthode plus verbeuse, donc plus parlante)
-            // $table->unsignedBigInteger('post_id');
-            // $table->foreign('post_id')->references('id')->on('posts');
-
-            // ou comme cela (méthode plus courte, mais moins parlante)
-            $table->foreignId('post_id')->constrained();
         });
     }
 
