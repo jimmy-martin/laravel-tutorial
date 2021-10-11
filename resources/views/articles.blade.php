@@ -9,4 +9,11 @@
     @else
         <span>Aucun poste en base de données</span>
     @endif
+
+<h2>Liste des commentaire de la première vidéo</h2>
+    @forelse ($video->comments as $comment)
+        <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }} </div>
+    @empty
+        <div>Aucun commentaire pour cette vidéo.</div>
+    @endforelse
 @endsection

@@ -8,11 +8,11 @@
     </span>
 
     <hr>
-    {{-- @forelse ($post->comments as $comment)
+    @forelse ($post->comments as $comment)
         <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }} </div>
     @empty
         <div>Aucun commentaire pour ce poste.</div>
-    @endforelse --}}
+    @endforelse
     <hr>
 
     @forelse ($post->tags as $tag)
