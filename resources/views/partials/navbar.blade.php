@@ -1,4 +1,4 @@
-<ul>
+<ul class="flex justify-evenly">
     <li>
         <a href="{{ route('welcome') }}" class="hover:text-red-700">Tous les postes</a>
     </li>

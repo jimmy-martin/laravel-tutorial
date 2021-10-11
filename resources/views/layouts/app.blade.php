@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    @include('partials.navbar')
-    <div class="container mx-auto">
+    <div class="container mx-auto my-3">
+        @include('partials.navbar')
         @yield('content')
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
