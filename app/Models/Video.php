@@ -10,7 +10,7 @@ class Video extends Model
 {
     use HasFactory;
 
-    public function commentable()
+    public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
