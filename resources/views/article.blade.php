@@ -11,7 +11,14 @@
     @forelse ($post->comments as $comment)
         <div>{{ $comment->content }} | crée le {{ $comment->created_at->format('d/m/Y') }} </div>
     @empty
-        <div>Il n'y a pas de commentaires pour ce poste.</div>
+        <div>Aucun commentaire pour ce poste.</div>
+    @endforelse
+    <hr>
+
+    @forelse ($post->tags as $tag)
+        <div>{{ $tag->name }}</div>
+    @empty
+        <div>Aucun tag pour ce poste.</div>
     @endforelse
 
 @endsection
