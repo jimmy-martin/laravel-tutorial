@@ -19,16 +19,11 @@ class Post extends Model
      */
     protected $fillable = ['title', 'content'];
 
-    /**
-     * Get all post comments
-     *
-     * @return void
-     */
-    public function comments()
-    {
-        // Ne pas oublier d'importer la classe
-        return $this->hasMany(Comment::class);
-    }
+    // public function comments()
+    // {
+    //     // Ne pas oublier d'importer la classe
+    //     return $this->hasMany(Comment::class);
+    // }
 
     public function image()
     {
