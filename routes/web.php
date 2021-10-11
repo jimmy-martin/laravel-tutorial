@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::post('/posts/create', [PostController::class, 'store'])->name('posts.stor
 Route::get('/register', [PostController::class, 'register']);
 
 Route::get('/posts/{id}', [PostController::class, 'show'])->whereNumber('id')->name('posts.show');
+
+Route::get('/videos', [VideoController::class, 'show'])->name('videos.show');
+
+Route::get('/videos/{id}', [VideoController::class, 'item'])->whereNumber('id')->name('videos.item');
 
 Route::get('/contact', [PostController::class, 'contact'])->name('contact');
 

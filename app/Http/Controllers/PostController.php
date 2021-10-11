@@ -54,7 +54,6 @@ class PostController extends Controller
         // la méthode findOrFail permet de renvoyer une 404
         // si aucun article ne correspond à cet id
         $post = Post::findOrFail($id);
-
         // on peut aussi récupérer un article grace à la valeur d'une des ses colonnes
         // bien utiliser first() au lieu de get() car le where nous retourne un array
         // En utilisant get(), il aurait fallu boucler sur lé resultat pour ne retourner que le premier index
