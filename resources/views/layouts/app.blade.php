@@ -18,5 +18,3 @@
 </body>
 
 </html>
-
-{{-- TODO: Prochaine vidéo à suivre: les migrations (vidéo n°6) --}}
