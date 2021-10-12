@@ -74,6 +74,11 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => ['required', 'max:255', 'min:5', 'unique:posts'],
+            'content' => ['required'],
+        ]);
+
         // Ceci est la façon de faire qu'on a utilisé pour construire une API avec Lumen en formation
         // $post = new Post();
 
@@ -88,10 +93,6 @@ class PostController extends Controller
             'title' => $request->title,
             'content' => $request->content
         ]);
-
-
-
-        dd('Poste crée !');
     }
 
     public function contact()
@@ -116,6 +117,5 @@ class PostController extends Controller
         $comment3 = new Comment(['content' => 'Mon troisième commentaire']);
 
         $video->comments()->save($comment3);
-
     }
 }

@@ -3,6 +3,12 @@
 @section('content')
     <h1 class="my-2 text-2xl">Créer un nouveau poste</h1>
 
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div class="text-red-500 my-2">{{ $error }}</div>
+        @endforeach
+    @endif
+
     <form action="{{ route('posts.store') }}" method="POST">
         {{-- Je peux ajouter un token csrf avec @csrf --}}
         @csrf
