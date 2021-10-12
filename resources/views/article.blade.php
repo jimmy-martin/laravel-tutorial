@@ -3,9 +3,13 @@
 @section('content')
     <h1 class="text-2xl">{{ $post->content }}</h1>
 
-    <span>
+    <div>
         {{ $post->image ? $post->image->path : 'Pas d\'image !' }}
-    </span>
+    </div>
+
+    <div>
+        Nom de l'artiste de l'image : {{ $post->image->artist->name ?? 'Pas d\'artiste !' }}
+    </div>
 
     <hr>
     @forelse ($post->comments as $comment)
@@ -20,5 +24,6 @@
     @empty
         <div>Aucun tag pour ce poste.</div>
     @endforelse
+
 
 @endsection
