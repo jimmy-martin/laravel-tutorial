@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Video;
+use App\Rules\Uppercase;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -75,7 +76,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => ['required', 'max:255', 'min:5', 'unique:posts'],
+            'title' => ['required', 'max:255', 'min:5', 'unique:posts', new Uppercase],
             'content' => ['required'],
         ]);
 
