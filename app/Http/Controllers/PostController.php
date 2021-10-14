@@ -92,7 +92,7 @@ class PostController extends Controller
         // Il faudra donc permettre le mass assignement sur les champs voulus dans le Model Post au préalable (voir model Post)
         Post::create([
             'title' => $request->title,
-            'content' => $request->content
+            'content' => $request->input('content')
         ]);
     }
 
